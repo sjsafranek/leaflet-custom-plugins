@@ -2,12 +2,12 @@
  * L.tileLayer.osm
  */
 L.tileLayer.osm = function(opts) {
-    let default = {
+    let _opts = {
         maxZoom: 19, 
         attribution: "&copy; OpenStreetMap contributors",
         referrerPolicy: 'no-referrer-when-downgrade'
     };
     opts = opts || {};
-    opts = { ...default, ...opts };
+    opts = { ..._opts, ...opts };
     return L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", opts);
 }
