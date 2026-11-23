@@ -6,9 +6,9 @@
      * @param {number} meters - The buffer distance in meters
      * @returns {L.LatLngBounds} A new, expanded LatLngBounds object
      */
-    L.Bounds.buffer = function(meters) {
-        const sw = this.getSouthWest();
-        const ne = this.getNorthEast();
+    L.Bounds.buffer = function(bounds, meters) {
+        const sw = bounds.getSouthWest();
+        const ne = bounds.getNorthEast();
 
         // toBounds takes the full width/height of the box, so multiply by 2
         const swBuffer = sw.toBounds(meters * 2);
