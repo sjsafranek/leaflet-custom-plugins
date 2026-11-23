@@ -6,7 +6,11 @@
      * @param {number} meters - The buffer distance in meters
      * @returns {L.LatLngBounds} A new, expanded LatLngBounds object
      */
-    L.Bounds.buffer = function(bounds, meters) {
+    L.buffer = function(bounds, meters) {
+        if (bounds.getBounds) {
+            return L.buffer(bounds.getBounds());
+        }
+        
         const sw = bounds.getSouthWest();
         const ne = bounds.getNorthEast();
 
@@ -18,6 +22,7 @@
             swBuffer.getSouthWest(),
             neBuffer.getNorthEast()
         );
+
     }
 
 })(window.L);
