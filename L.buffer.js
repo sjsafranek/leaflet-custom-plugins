@@ -8,7 +8,7 @@
      */
     L.buffer = function(bounds, meters) {
         if (bounds.getBounds) {
-            return L.buffer(bounds.getBounds());
+            return L.buffer(bounds.getBounds(), meters);
         }
         
         const sw = bounds.getSouthWest();
