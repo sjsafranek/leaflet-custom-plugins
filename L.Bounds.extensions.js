@@ -6,7 +6,7 @@
      * @param {number} meters - The buffer distance in meters
      * @returns {L.LatLngBounds} A new, expanded LatLngBounds object
      */
-    L.Bounds.prototype.buffer = function(meters) {
+    L.Bounds.buffer = function(meters) {
         const sw = this.getSouthWest();
         const ne = this.getNorthEast();
 

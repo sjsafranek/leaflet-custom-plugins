@@ -14,4 +14,5 @@
         opts = { ..._opts, ...opts };
         return L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", opts);
     }
+    
 })(window.L);
